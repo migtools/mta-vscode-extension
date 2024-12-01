@@ -53,8 +53,15 @@ export class AnalyzerResults {
                     if (incidents) {
                         incidents.forEach(incident => {
                             const file = (incident.uri as string).replace(this.config.sourceBase(), '');
-                            const root = vscode.workspace.workspaceFolders[0];
-                            const fileUri = vscode.Uri.joinPath(root.uri, file);
+                            const root = vscode.workspace.workspaceFolders?.[0]; 
+                            let fileUri: vscode.Uri;
+                            const inputPaths = this.config.getinput(); 
+                            if (Array.isArray(inputPaths) && inputPaths[0]) {
+                                fileUri = vscode.Uri.joinPath(vscode.Uri.file(inputPaths[0]), file);
+                            } else if (root) {
+                                fileUri = vscode.Uri.joinPath(root.uri, file);
+                            } 
+                     
                             try {
                                 const hint = {
                                     type: IIssueType.Hint,
