@@ -1,0 +1,34 @@
+name: Basic CI
+
+on:
+  push:
+    branches:
+      - "7.2.0" # Trigger only on pushes to the master branch
+
+  pull_request:
+    branches:
+      - "7.2.0" # Trigger on pull requests targeting the master branch
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest # Use Ubuntu for the runner
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "16" # Specify the Node.js version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Compile the project
+      - name: Compile the project
+        run: npm run compile
