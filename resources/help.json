@@ -216,7 +216,8 @@
         "description": "The location of the generated analysis results.",
         "type": "String",
         "ui-type": ["single"],
-        "required": false
+        "required": true,
+        "editable": false
       },
       {
         "name": "analyze-known-libraries",
