@@ -69,7 +69,7 @@ jobs:
 
       - name: Publish to marketplace
         run: |
-          if [ "${{ github.repository_owner }}" = "migtool" ]; then
+          if [ "${{ github.repository_owner }}" = "migtools" ]; then
             echo "Publishing to VS Code Marketplace..."
             vsce publish --pat ${{ secrets.VSCODE_MARKETPLACE_TOKEN }}
           fi
