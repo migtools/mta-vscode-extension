@@ -217,6 +217,15 @@ export class AnalyzerUtil {
             });
         }
 
+        if (options['enable-default-rulesets']) {
+            console.log('enable so setting to true');
+            params.push('--enable-default-rulesets=true');
+        }
+        else {
+            console.log('disable so setting to false');
+            params.push('--enable-default-rulesets=false');
+        }
+
         console.log("Options: ")
         for (const key in config.options) {
             if (config.options.hasOwnProperty(key)) {
