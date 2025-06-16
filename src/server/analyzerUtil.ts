@@ -207,8 +207,11 @@ export class AnalyzerUtil {
     } else {
         params.push(`${provider}`);
     }
-  
-        // rules
+    
+    //list-languages
+   // params.push('--list-languages');
+     
+    // rules
         let rules = options['rules'];
         if (rules && rules.length > 0) {
             rules.forEach(entry => {
