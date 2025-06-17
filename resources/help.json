@@ -79,6 +79,7 @@
           "eapxp2",
           "eapxp3",
           "eapxp5",
+          "eapxp6",
           "fsw",
           "fsw6",
           "fuse",
@@ -118,6 +119,8 @@
           "resteasy",
           "resteasy3",
           "rhr",
+          "spring-boot3",
+          "spring-security6",
           "spring6"
           ],
         "editable": true
@@ -183,6 +186,8 @@
           "sonic",
           "sonicesb",
           "spring",
+          "spring-boot2",
+          "spring-security5",
           "spring5",
           "springboot",
           "thorntail",
